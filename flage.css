@@ -1,0 +1,562 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+
+/* SKY */
+
+.sky {
+    min-height: 100vh;
+    width: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #74c9f5,
+            #dff6ff
+        );
+}
+
+
+/* CLOUDS */
+
+.cloud {
+    position: absolute;
+
+    font-size: 70px;
+
+    opacity: 0.8;
+
+    animation: cloudMove 20s linear infinite;
+}
+
+.cloud1 {
+    top: 10%;
+    left: -100px;
+}
+
+.cloud2 {
+    top: 25%;
+    left: -200px;
+
+    animation-delay: 5s;
+}
+
+.cloud3 {
+    top: 5%;
+    left: -300px;
+
+    animation-delay: 10s;
+}
+
+
+@keyframes cloudMove {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(120vw);
+    }
+}
+
+
+/* BIRDS */
+
+.bird {
+    position: absolute;
+
+    left: -100px;
+
+    font-size: 35px;
+
+    z-index: 2;
+
+    animation: birdFly 10s linear infinite;
+}
+
+
+.bird1 {
+    top: 20%;
+
+    animation-duration: 9s;
+}
+
+
+.bird2 {
+    top: 35%;
+
+    font-size: 28px;
+
+    animation-duration: 12s;
+
+    animation-delay: 2s;
+}
+
+
+.bird3 {
+    top: 15%;
+
+    font-size: 25px;
+
+    animation-duration: 15s;
+
+    animation-delay: 5s;
+}
+
+
+@keyframes birdFly {
+
+    0% {
+        left: -100px;
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-25px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateY(25px);
+    }
+
+    100% {
+        left: 110%;
+        transform: translateY(0);
+    }
+}
+
+
+/* MAIN CONTAINER */
+
+.container {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 90%;
+    max-width: 700px;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+
+/* HEADING */
+
+h1 {
+
+    font-size: 42px;
+
+    color: #ff6b00;
+
+    text-shadow:
+        2px 2px 0 white,
+        0 0 15px rgba(255, 255, 255, 0.8);
+
+    animation: headingGlow 2s ease-in-out infinite alternate;
+}
+
+
+@keyframes headingGlow {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.04);
+    }
+}
+
+
+.subtitle {
+
+    margin-top: 10px;
+
+    font-size: 20px;
+
+    color: #333;
+}
+
+
+/* FLAG */
+
+.flag {
+
+    width: 500px;
+
+    max-width: 90vw;
+
+    height: 300px;
+
+    margin: 35px auto 25px;
+
+    overflow: hidden;
+
+    transform-origin: left center;
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.25);
+
+    animation: flagWave 2.5s ease-in-out infinite;
+}
+
+
+/* FLAG COLORS */
+
+.orange {
+
+    height: 100px;
+
+    width: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff9933,
+            #ffb45c,
+            #ff9933
+        );
+}
+
+
+.white {
+
+    height: 100px;
+
+    width: 100%;
+
+    background: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.green {
+
+    height: 100px;
+
+    width: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #138808,
+            #42b835,
+            #138808
+        );
+}
+
+
+/* CHAKRA */
+
+.chakra {
+
+    width: 80px;
+
+    height: 80px;
+
+    animation:
+        chakraRotate 4s linear infinite;
+}
+
+
+@keyframes chakraRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* FLAG WAVE */
+
+@keyframes flagWave {
+
+    0% {
+
+        transform:
+            perspective(700px)
+            rotateY(0deg)
+            skewY(0deg);
+    }
+
+    25% {
+
+        transform:
+            perspective(700px)
+            rotateY(-8deg)
+            skewY(1deg);
+    }
+
+    50% {
+
+        transform:
+            perspective(700px)
+            rotateY(-15deg)
+            skewY(2deg);
+    }
+
+    75% {
+
+        transform:
+            perspective(700px)
+            rotateY(-8deg)
+            skewY(-1deg);
+    }
+
+    100% {
+
+        transform:
+            perspective(700px)
+            rotateY(0deg)
+            skewY(0deg);
+    }
+}
+
+
+/* DATE */
+
+h2 {
+
+    margin-top: 10px;
+
+    font-size: 28px;
+
+    color: #138808;
+}
+
+
+/* COUNTDOWN */
+
+.countdown {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 20px 0;
+}
+
+
+.countdown div {
+
+    width: 85px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+.countdown span {
+
+    display: block;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: #ff6b00;
+}
+
+
+.countdown small {
+
+    color: #333;
+}
+
+
+/* BUTTON */
+
+button {
+
+    border: none;
+
+    padding: 14px 28px;
+
+    border-radius: 30px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff9933,
+            #138808
+        );
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.25);
+
+    transition: 0.3s;
+}
+
+
+button:hover {
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+#message {
+
+    margin-top: 15px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #138808;
+}
+
+
+/* CONFETTI */
+
+#confetti {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 20;
+}
+
+
+.confetti-piece {
+
+    position: absolute;
+
+    top: -30px;
+
+    width: 10px;
+
+    height: 20px;
+
+    animation:
+        confettiFall 3s linear forwards;
+}
+
+
+@keyframes confettiFall {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .flag {
+        width: 90vw;
+        height: 54vw;
+        max-height: 270px;
+    }
+
+    .orange,
+    .white,
+    .green {
+        height: 18vw;
+        max-height: 90px;
+    }
+
+    .chakra {
+        width: 65px;
+        height: 65px;
+    }
+
+    .countdown {
+        gap: 6px;
+    }
+
+    .countdown div {
+        width: 65px;
+        padding: 8px;
+    }
+
+    .countdown span {
+        font-size: 20px;
+    }
+
+    .countdown small {
+        font-size: 11px;
+    }
+}
